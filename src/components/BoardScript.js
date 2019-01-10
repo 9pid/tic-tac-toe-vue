@@ -6,6 +6,7 @@ export default {
     Space
   },
   props: {
+    spaces: Array,
     onClick: Function
   }
 }

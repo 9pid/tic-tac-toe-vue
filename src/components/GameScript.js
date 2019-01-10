@@ -10,12 +10,27 @@ export default {
   data: function() {
     return {
       message: 'ゲーム状況をお知らせ',
-      turns: [0, 1]
+      history: [{
+        spaces: Array(9).fill(null)
+      }],
+      turnNumber: 0,
+      player: 'X'
     };
+  },
+  computed: {
+    currentSpaces: function() {
+      return this.history[this.turnNumber].spaces;
+    }
   },
   methods: {
     onClickSpace: function(spaceNumber) {
-      console.log('spaceNumber: ' + spaceNumber);
+      const newSpaces = this.history[this.turnNumber].spaces.concat();
+      newSpaces[spaceNumber] = this.player;
+      this.history.push({
+        spaces: newSpaces
+      });
+      this.turnNumber++;
+      this.player = this.player === 'X'? 'O': 'X';
     },
     onClickMoveButton: function(turnNumber) {
       console.log('turnNumber:' + turnNumber);

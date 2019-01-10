@@ -2,8 +2,13 @@ export default {
   name: 'Space',
   props: {
     spaceNumber: Number,
-    value: String,
+    spaces: Array,
     onClick: Function
+  },
+  computed: {
+    value: function() {
+      return this.spaces[this.spaceNumber];
+    }
   },
   methods: {
     clickHandler: function() {
