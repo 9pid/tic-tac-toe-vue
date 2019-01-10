@@ -26,7 +26,16 @@ export default {
       return calculateWinner(this.currentSpaces);
     },
     message: function() {
+      // 勝敗が決した場合、勝者を表示
       if (this.winner) return 'Winner: ' + this.winner;
+
+      // 引き分けの場合
+      const isDraw = this.currentSpaces.every((space) => {
+        return space !== null;
+      });
+      if (isDraw) return 'Draw';
+
+      // 現在のプレイヤーを表示
       return 'Now Player: ' + this.player;
     },
   },
