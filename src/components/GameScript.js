@@ -26,6 +26,9 @@ export default {
   },
   methods: {
     onClickSpace: function(spaceNumber) {
+      // 既に記入済みのマス目の場合、何もしない
+      if (this.currentSpaces[spaceNumber]) return ;
+
       const newSpaces = this.history[this.turnNumber].spaces.concat();
       newSpaces[spaceNumber] = this.player;
       this.history.push({
