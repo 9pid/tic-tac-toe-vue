@@ -4,10 +4,11 @@ export default {
     turnNumber: Number,
     onClick: Function
   },
-  data: function() {
-    return {
-      message: 'hoge に移動'
-    };
+  computed: {
+    message: function() {
+      if (this.turnNumber ==- 0) return 'Go to game start';
+      return 'Go to turn #' + this.turnNumber;
+    }
   },
   methods: {
     clickHandler: function() {
