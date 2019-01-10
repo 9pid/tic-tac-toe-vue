@@ -40,6 +40,7 @@ export default {
     },
   },
   methods: {
+    // マス目をマーク
     onClickSpace: function(spaceNumber) {
       // 既に記入済みのマス目の場合
       // 勝敗が決した場合
@@ -47,18 +48,23 @@ export default {
       if (this.currentSpaces[spaceNumber] ||
           this.winner) return ;
 
+      // 新しい盤面を算出
       const newSpaces = this.history[this.turnNumber].spaces.concat();
       newSpaces[spaceNumber] = this.player;
-      this.history.push({
+
+      // dataを更新
+      this.history = this.history.slice(0, this.turnNumber+1).concat([{
         spaces: newSpaces
-      });
+      }]);
       this.turnNumber++;
       this.player = this.player === GAME_CONST.PLAYER.X?
         GAME_CONST.PLAYER.O:
         GAME_CONST.PLAYER.X;
     },
+
+    // ターンを移動
     onClickMoveButton: function(turnNumber) {
-      console.log('turnNumber:' + turnNumber);
+      this.turnNumber = turnNumber;
     }
   }
 }
