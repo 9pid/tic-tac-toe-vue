@@ -9,7 +9,6 @@ export default {
   },
   data: function() {
     return {
-      message: 'ゲーム状況をお知らせ',
       history: [{
         spaces: Array(9).fill(null)
       }],
@@ -18,6 +17,9 @@ export default {
     };
   },
   computed: {
+    message: function() {
+      return 'Now Player: ' + this.player;
+    },
     currentSpaces: function() {
       return this.history[this.turnNumber].spaces;
     }
