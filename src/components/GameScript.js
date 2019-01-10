@@ -14,8 +14,11 @@ export default {
     };
   },
   methods: {
-    onClick: function(spaceNumber) {
-      console.log(spaceNumber);
+    onClickSpace: function(spaceNumber) {
+      console.log('spaceNumber: ' + spaceNumber);
+    },
+    onClickMoveButton: function(turnNumber) {
+      console.log('turnNumber:' + turnNumber);
     }
   }
 }

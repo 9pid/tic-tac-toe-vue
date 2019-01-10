@@ -1,6 +1,6 @@
 <div class="game">
   <div class="game-board">
-    <Board :on-click="onClick"></Board>
+    <Board :on-click="onClickSpace"></Board>
   </div>
   <div class="game-info">
     <div class="status">
@@ -8,7 +8,7 @@
     </div>
     <ol>
       <li v-for="turn in turns">
-        ボタン
+        <MoveButton :turn-number="turn" :on-click="onClickMoveButton"></MoveButton>
       </li>
     </ol>
   </div>
