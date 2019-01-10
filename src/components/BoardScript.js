@@ -4,5 +4,8 @@ export default {
   name: 'Board',
   components: {
     Space
+  },
+  props: {
+    onClick: Function
   }
 }

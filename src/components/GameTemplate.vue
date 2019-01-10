@@ -1,6 +1,6 @@
 <div class="game">
   <div class="game-board">
-    <Board></Board>
+    <Board :on-click="onClick"></Board>
   </div>
   <div class="game-info">
     <div class="status">

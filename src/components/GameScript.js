@@ -12,5 +12,10 @@ export default {
       message: 'ゲーム状況をお知らせ',
       turns: [0, 1]
     };
+  },
+  methods: {
+    onClick: function(spaceNumber) {
+      console.log(spaceNumber);
+    }
   }
 }
