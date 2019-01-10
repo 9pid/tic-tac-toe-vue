@@ -1,11 +1,17 @@
 <div>
   <div class="board-row">
-    ここにマス
+    <Space></Space>
+    <Space></Space>
+    <Space></Space>
   </div>
   <div class="board-row">
-    ここにマス
+    <Space></Space>
+    <Space></Space>
+    <Space></Space>
   </div>
   <div class="board-row">
-    ここにマス
+    <Space></Space>
+    <Space></Space>
+    <Space></Space>
   </div>
 </div>

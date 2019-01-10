@@ -1,3 +1,8 @@
+import Space from './Space';
+
 export default {
-  name: 'Board'
+  name: 'Board',
+  components: {
+    Space
+  }
 }
