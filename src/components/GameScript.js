@@ -1,5 +1,6 @@
 import Board from './Board';
 import MoveButton from './MoveButton';
+import { GAME_CONST } from '../consts/GameConst';
 import { calculateWinner } from '../utils/ScoreUtil.js';
 
 export default {
@@ -14,7 +15,7 @@ export default {
         spaces: Array(9).fill(null)
       }],
       turnNumber: 0,
-      player: 'X'
+      player: GAME_CONST.PLAYER.X
     };
   },
   computed: {
@@ -43,7 +44,9 @@ export default {
         spaces: newSpaces
       });
       this.turnNumber++;
-      this.player = this.player === 'X'? 'O': 'X';
+      this.player = this.player === GAME_CONST.PLAYER.X?
+        GAME_CONST.PLAYER.O:
+        GAME_CONST.PLAYER.X;
     },
     onClickMoveButton: function(turnNumber) {
       console.log('turnNumber:' + turnNumber);
