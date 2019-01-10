@@ -14,11 +14,15 @@ export default {
       history: [{
         spaces: Array(9).fill(null)
       }],
-      turnNumber: 0,
-      player: GAME_CONST.PLAYER.X
+      turnNumber: 0
     };
   },
   computed: {
+    player: function() {
+      return this.turnNumber % 2 === 0?
+        GAME_CONST.PLAYER.X:
+        GAME_CONST.PLAYER.O
+    },
     currentSpaces: function() {
       return this.history[this.turnNumber].spaces;
     },
@@ -57,9 +61,6 @@ export default {
         spaces: newSpaces
       }]);
       this.turnNumber++;
-      this.player = this.player === GAME_CONST.PLAYER.X?
-        GAME_CONST.PLAYER.O:
-        GAME_CONST.PLAYER.X;
     },
 
     // ターンを移動
